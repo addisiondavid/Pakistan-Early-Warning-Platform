@@ -1,0 +1,26 @@
+{
+  "warnData": {
+    "blue": [
+      [2, "2023-03-16 17:00:00", "2023-03-16 20:00:00", "RS", "Blue", "GFS_RS_PA2023031600_012_012_Blue.json", "RainStorm"],
+      [2, "2023-03-16 23:00:00", "2023-03-17 02:00:00", "RS", "Blue", "GFS_RS_PA2023031600_018_018_Blue.json", "RainStorm"],
+      [0, "2023-03-17 23:00:00", "2023-03-18 02:00:00", "CW", "Blue", "GFS_CW_PA2023031600_042_045_Blue.json", "ColdWave"]
+    ],
+    "yellow": [
+      [1, "2023-03-16 14:00:00", "2023-03-16 17:00:00", "HW", "Blue", "GFS_HW_PA2023031600_009_009_Blue.json", "HeatWave"],
+      [2, "2023-03-17 21:00:00", "2023-03-18 02:00:00", "RS", "Yellow", "GFS_RS_PA2023031600_036_042_Yellow.json", "RainStorm"]
+    ],
+    "orange": [
+    ],
+    "red": [
+    ],
+    "dimensions": ["ID", "StartTime", "EndTime", "Type", "Level", "Data", "Name"]
+  },
+  "warnType": {
+    "dimensions": ["Name", "Type"],
+    "data": [
+      ["RainStorm", "RS"],
+      ["HeatWave", "HW"],
+      ["ColdWave", "CW"]
+    ]
+  }
+}

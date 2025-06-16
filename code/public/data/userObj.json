@@ -1,0 +1,22 @@
+{
+  "layers": [
+    {
+      "pid": 2030,
+      "name": "Government",
+      "type": "group",
+      "center": { "lat": 33.589536, "lng": 119.032216, "alt": 145.08, "heading": 3.1, "pitch": -22.9 }
+    },
+    {
+      "pid": 2030,
+      "name": "Emergency department",
+      "type": "group",
+      "center": { "lat": 33.589536, "lng": 119.032216, "alt": 145.08, "heading": 3.1, "pitch": -22.9 }
+    },
+    {
+      "pid": 2031,
+      "name": "Enterprise",
+      "type": "group",
+      "center": { "lat": 33.589536, "lng": 119.032216, "alt": 145.08, "heading": 3.1, "pitch": -22.9 }
+    }
+  ]
+}

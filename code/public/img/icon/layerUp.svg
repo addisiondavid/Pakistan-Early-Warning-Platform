@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Edit</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Edit">
+            <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+            <line x1="20" y1="20" x2="4" y2="20" id="Path" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></line>
+            <path d="M640.891,551.6l6,3.976a2.008,2.008,0,0,0,2.218,0l6-3.976a1.982,1.982,0,0,0,0-3.309l-6-3.976a2.008,2.008,0,0,0-2.218,0l-6,3.976A1.982,1.982,0,0,0,640.891,551.6ZM648,545.964l6,3.977-6,3.976-6-3.976Zm6.448,7.657-0.448.3-6,3.976-6-3.976-0.448-.3a0.995,0.995,0,1,0-1.106,1.654l0.954,0.63,5.49,3.638a2.013,2.013,0,0,0,2.22,0L654,556.3l1.554-1.027a0.99,0.99,0,0,0,.446-0.827h0A1,1,0,0,0,654.448,553.621Z" id="Path" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>

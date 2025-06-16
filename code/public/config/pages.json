@@ -1,0 +1,51 @@
+[
+  {
+    "name": "快速开始",
+    "icon": "fa-globe",
+    "children": [
+      {
+        "name": "气象一体化系统",
+        "details": "",
+        "children": [
+          {
+            "id": "T01",
+            "name": "监视预警",
+            "main": "warning",
+            "hasPannel": true
+          },
+          {
+            "id": "T02",
+            "name": "分析处理",
+            "main": "index",
+            "libs": ["mars3d", "mars3d-wind","wcontour"],
+            "hasPannel": true
+          },
+          {
+            "id": "T03",
+            "name": "风云卫星",
+            "main": "sate",
+            "hasPannel": true
+          },
+          {
+            "id": "T09",
+            "name": "系统设置",
+            "main": "systemConf",
+            "hasPannel": true
+          }
+        ]
+      },{
+        "name": "样例",
+        "details": "",
+        "children": [
+          {
+            "id": "D01",
+            "name": "样例",
+            "main": "demo",
+            "libs": ["mars3d", "mars3d-wind"],
+            "hasPannel": true
+          }
+        ]
+      }
+    ]
+  }
+]

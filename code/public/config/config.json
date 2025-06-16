@@ -1,0 +1,532 @@
+{
+  "map3d": {
+    "lang": "EN",
+    "scene": {
+      "center": {
+        "lat": 30.5,
+        "lng": 69.0,
+        "alt": 3500000,
+        "heading": 359.2,
+        "pitch": -90
+      },
+      "scene3DOnly": false,
+      "shadows": false,
+      "removeDblClick": true,
+      "sceneMode": 2,
+      "showSun": false,
+      "showMoon": false,
+      "showSkyBox": false,
+      "showSkyAtmosphere": false,
+      "fog": false,
+      "fxaa": false,
+      "requestRenderMode": false,
+      "backgroundColor": "#E7F3FF",
+      "globe": {
+        "depthTestAgainstTerrain": false,
+        "show": true,
+        "baseColor": "#9EC2F2",
+        "showGroundAtmosphere": true,
+        "enableLighting": false
+      },
+      "cameraController": {
+        "zoomFactor": 3.0,
+        "minimumZoomDistance": 1,
+        "maximumZoomDistance": 27600000,
+        "enableRotate": true,
+        "enableTranslate": true,
+        "enableTilt": true,
+        "enableZoom": true,
+        "enableCollisionDetection": true,
+        "minimumCollisionTerrainHeight": 15000
+      }
+    },
+    "control": {
+      "homeButton": true,
+      "baseLayerPicker": true,
+      "sceneModePicker": true,
+      "vrButton": false,
+      "fullscreenButton": false,
+      "navigationHelpButton": false,
+      "animation": false,
+      "timeline": false,
+      "infoBox": true,
+      "geocoder": false,
+      "clockAnimate": false,
+      "selectionIndicator": true,
+      "contextmenu": {
+        "hasDefault": true
+      },
+      "mouseDownView": true,
+      "zoom": {
+        "insertIndex": 1
+      },
+      "compass": {
+        "top": "80px",
+        "left": "10px"
+      },
+      "distanceLegend": {
+        "left": "20px",
+        "bottom": "5px"
+      },
+      "locationBar": {
+        "fps": false,
+        "style": {
+          "bottom": "20px",
+          "left": "20px"
+        },
+        "crs": "CGCS2000_GK_Zone_3",
+        "crsDecimal": 0,
+        "template": "<div>Lng:{lng}</div> <div>Lat:{lat}</div> <div>Alt：{alt}米</div>"
+      }
+    },
+    "basemaps": [{
+        "id": 1,
+        "name": "地图底图",
+        "type": "group"
+      },
+      {
+        "pid": 1,
+        "name": "Pakistan Map",
+        "icon": "img/basemaps/osm.png",
+        "type": "wms",
+        "layerType": "base",
+        "url": "http://47.94.18.73:8188/geoserver/GisServer/wms",
+        "layers": "GisServer:continents_Project",
+        "crs": "EPSG:4326",
+        "parameters": {
+          "transparent": true,
+          "format": "image/png"
+        },
+        "zIndex": 0,
+        "enablePickFeatures": false,
+        "alpha": 0.9
+      },
+      {
+        "pid": 10,
+        "name": "Black Map",
+        "icon": "/img/basemaps/bd-c-dark.png",
+        "type": "tencent",
+        "layerType": "base",
+        "layer": "custom",
+        "isPrivate": true,
+        "style": "4",
+        "zIndex": 0,
+        "show": false
+      },
+      {
+        "pid": 1,
+        "name": "Blue Map",
+        "icon": "img/basemaps/bd-c-midnight.png",
+        "type": "xyz",
+        "layerType": "base",
+        "url": "http://map.geoq.cn/arcgis/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/{z}/{y}/{x}",
+        "chinaCRS": "GCJ02",
+        "zIndex": 0,
+        "enablePickFeatures": false
+      },
+      {
+        "pid": 1,
+        "name": "Tence Image",
+        "icon": "img/basemaps/tencent_img.png",
+        "type": "group",
+        "layerType": "base",
+        "zIndex": 0,
+        "layers": [{
+            "name": "底图",
+            "type": "tencent",
+            "layer": "img_d"
+          },
+          {
+            "name": "注记",
+            "type": "tencent",
+            "layer": "img_z"
+          }
+        ],
+        "show": true
+      }
+    ],
+    "layers": [{
+        "id": 10,
+        "name": "Base Layers",
+        "type": "group"
+      },
+      {
+        "pid": 10,
+        "name": "National Boundaries",
+        "type": "wms",
+        "layerType": "base",
+        "url": "http://47.94.18.73:8188/geoserver/GisServer/wms",
+        "layers": "GisServer:baseMapLayer1",
+        "crs": "EPSG:4326",
+        "parameters": { "transparent": "true", "format": "image/png" },
+        "maximumLevel": 10,
+        "enablePickFeatures": false,
+        "zIndex": 10000,
+        "mapSplit": false,
+        "show": true
+      },
+      {
+        "pid": 10,
+        "name": "Toponym",
+        "type": "tdt",
+        "layerType": "base",
+        "url": "https://t{s}.tianditu.gov.cn/DataServer?T=eva_w&x={x}&y={y}&l={z}",
+        "maximumLevel": 10,
+        "zIndex": 10,
+        "mapSplit": false,
+        "show": false
+      },
+      {
+        "pid": 10,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "City Boundary",
+        "url": "/data/geojson/areas/100000_full.json",
+        "symbol": {
+          "type": "polylineP",
+          "styleOptions": {
+            "color": "#ffffff",
+            "width": 2,
+            "opacity": 0.8,
+            "label": {
+              "text": "{name}",
+              "position": "center",
+              "font_size": 30,
+              "color": "#ffffff",
+              "outline": true,
+              "outlineColor": "#000000",
+              "scaleByDistance": true,
+              "scaleByDistance_far": 60000000,
+              "scaleByDistance_farValue": 0.2,
+              "scaleByDistance_near": 1000000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 12000000,
+              "distanceDisplayCondition_near": 0
+            }
+          }
+        },
+        "show": false,
+        "flyTo": true
+      },
+      {
+          "id": 20,
+          "name": "Background Field Layers",
+          "type": "group"
+      },
+      {
+        "pid": 20,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "River",
+        "url": "{dataServer}/file/geojson/areas/100000_full.json",
+        "symbol": {
+          "type": "polylineP",
+          "styleOptions": {
+            "color": "#ffffff",
+            "width": 2,
+            "opacity": 0.8,
+            "label": {
+              "text": "{name}",
+              "position": "center",
+              "font_size": 30,
+              "color": "#ffffff",
+              "outline": true,
+              "outlineColor": "#000000",
+              "scaleByDistance": true,
+              "scaleByDistance_far": 60000000,
+              "scaleByDistance_farValue": 0.2,
+              "scaleByDistance_near": 1000000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 12000000,
+              "distanceDisplayCondition_near": 0
+            }
+          }
+        },
+        "show": false,
+        "flyTo": true
+      },
+      {
+        "pid": 20,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "Lake",
+        "url": "{dataServer}/file/geojson/areas/100000_full.json",
+        "symbol": {
+          "type": "polylineP",
+          "styleOptions": {
+            "color": "#ffffff",
+            "width": 2,
+            "opacity": 0.8,
+            "label": {
+              "text": "{name}",
+              "position": "center",
+              "font_size": 30,
+              "color": "#ffffff",
+              "outline": true,
+              "outlineColor": "#000000",
+              "scaleByDistance": true,
+              "scaleByDistance_far": 60000000,
+              "scaleByDistance_farValue": 0.2,
+              "scaleByDistance_near": 1000000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 12000000,
+              "distanceDisplayCondition_near": 0
+            }
+          }
+        },
+        "show": false,
+        "flyTo": true
+      },
+      {
+        "pid": 20,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "Land Type",
+        "url": "{dataServer}/file/geojson/areas/100000_full.json",
+        "symbol": {
+          "type": "polylineP",
+          "styleOptions": {
+            "color": "#ffffff",
+            "width": 2,
+            "opacity": 0.8,
+            "label": {
+              "text": "{name}",
+              "position": "center",
+              "font_size": 30,
+              "color": "#ffffff",
+              "outline": true,
+              "outlineColor": "#000000",
+              "scaleByDistance": true,
+              "scaleByDistance_far": 60000000,
+              "scaleByDistance_farValue": 0.2,
+              "scaleByDistance_near": 1000000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 12000000,
+              "distanceDisplayCondition_near": 0
+            }
+          }
+        },
+        "show": false,
+        "flyTo": true
+      },
+      {
+        "id": 30,
+        "name": "Installation",
+        "type": "group"
+      },
+      {
+        "pid": 30,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "Dam",
+        "url": "{dataServer}/file/geojson/xizangyakou.json",
+        "symbol": {
+          "styleOptions": {
+            "image": "img/marker/mark-red.png",
+            "scaleByDistance": true,
+            "scaleByDistance_far": 5000000,
+            "scaleByDistance_farValue": 0.5,
+            "scaleByDistance_near": 1000,
+            "scaleByDistance_nearValue": 1,
+            "verticalOrigin": 1,
+            "horizontalOrigin": 0,
+            "clampToGround": true,
+            "label": {
+              "text": "{NAME}",
+              "font_size": 25,
+              "color": "#ffff00",
+              "font_family": "微软雅黑",
+              "outline": true,
+              "outlineColor": "#000000",
+              "pixelOffsetY": -40,
+              "scaleByDistance": true,
+              "scaleByDistance_far": 1000000,
+              "scaleByDistance_farValue": 0.5,
+              "scaleByDistance_near": 1000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 1000000,
+              "distanceDisplayCondition_near": 0,
+              "visibleDepth": true
+            }
+          }
+        },
+        "popup": [{
+            "field": "NAME",
+            "name": "NAME"
+          },
+          {
+            "type": "details",
+            "callback": "showPopupDetails",
+            "field": "IMG",
+            "className": "mars3d-popup-btn-custom"
+          }
+        ],
+        "show": false,
+        "flyTo": true
+      },
+      {
+        "pid": 30,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "Airport",
+        "url": "{dataServer}/file/geojson/xizangyakou.json",
+        "symbol": {
+          "styleOptions": {
+            "image": "img/marker/mark-red.png",
+            "scaleByDistance": true,
+            "scaleByDistance_far": 5000000,
+            "scaleByDistance_farValue": 0.5,
+            "scaleByDistance_near": 1000,
+            "scaleByDistance_nearValue": 1,
+            "verticalOrigin": 1,
+            "horizontalOrigin": 0,
+            "clampToGround": true,
+            "label": {
+              "text": "{NAME}",
+              "font_size": 25,
+              "color": "#ffff00",
+              "font_family": "微软雅黑",
+              "outline": true,
+              "outlineColor": "#000000",
+              "pixelOffsetY": -40,
+              "scaleByDistance": true,
+              "scaleByDistance_far": 1000000,
+              "scaleByDistance_farValue": 0.5,
+              "scaleByDistance_near": 1000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 1000000,
+              "distanceDisplayCondition_near": 0,
+              "visibleDepth": true
+            }
+          }
+        },
+        "popup": [{
+            "field": "NAME",
+            "name": "NAME"
+          },
+          {
+            "type": "details",
+            "callback": "showPopupDetails",
+            "field": "IMG",
+            "className": "mars3d-popup-btn-custom"
+          }
+        ],
+        "show": false,
+        "flyTo": true
+      },
+      {
+        "id": 40,
+        "name": "Social Data",
+        "type": "group"
+      },
+      {
+        "pid": 40,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "Demographic",
+        "url": "{dataServer}/file/geojson/xizangyakou.json",
+        "symbol": {
+          "styleOptions": {
+            "image": "img/marker/mark-red.png",
+            "scaleByDistance": true,
+            "scaleByDistance_far": 5000000,
+            "scaleByDistance_farValue": 0.5,
+            "scaleByDistance_near": 1000,
+            "scaleByDistance_nearValue": 1,
+            "verticalOrigin": 1,
+            "horizontalOrigin": 0,
+            "clampToGround": true,
+            "label": {
+              "text": "{NAME}",
+              "font_size": 25,
+              "color": "#ffff00",
+              "font_family": "微软雅黑",
+              "outline": true,
+              "outlineColor": "#000000",
+              "pixelOffsetY": -40,
+              "scaleByDistance": true,
+              "scaleByDistance_far": 1000000,
+              "scaleByDistance_farValue": 0.5,
+              "scaleByDistance_near": 1000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 1000000,
+              "distanceDisplayCondition_near": 0,
+              "visibleDepth": true
+            }
+          }
+        },
+        "popup": [{
+            "field": "NAME",
+            "name": "NAME"
+          },
+          {
+            "type": "details",
+            "callback": "showPopupDetails",
+            "field": "IMG",
+            "className": "mars3d-popup-btn-custom"
+          }
+        ],
+        "show": false,
+        "flyTo": true
+      },
+      {
+        "pid": 40,
+        "type": "geojson",
+        "layerType": "base",
+        "name": "Economic",
+        "url": "{dataServer}/file/geojson/xizangyakou.json",
+        "symbol": {
+          "styleOptions": {
+            "image": "img/marker/mark-red.png",
+            "scaleByDistance": true,
+            "scaleByDistance_far": 5000000,
+            "scaleByDistance_farValue": 0.5,
+            "scaleByDistance_near": 1000,
+            "scaleByDistance_nearValue": 1,
+            "verticalOrigin": 1,
+            "horizontalOrigin": 0,
+            "clampToGround": true,
+            "label": {
+              "text": "{NAME}",
+              "font_size": 25,
+              "color": "#ffff00",
+              "font_family": "微软雅黑",
+              "outline": true,
+              "outlineColor": "#000000",
+              "pixelOffsetY": -40,
+              "scaleByDistance": true,
+              "scaleByDistance_far": 1000000,
+              "scaleByDistance_farValue": 0.5,
+              "scaleByDistance_near": 1000,
+              "scaleByDistance_nearValue": 1,
+              "distanceDisplayCondition": true,
+              "distanceDisplayCondition_far": 1000000,
+              "distanceDisplayCondition_near": 0,
+              "visibleDepth": true
+            }
+          }
+        },
+        "popup": [{
+            "field": "NAME",
+            "name": "NAME"
+          },
+          {
+            "type": "details",
+            "callback": "showPopupDetails",
+            "field": "IMG",
+            "className": "mars3d-popup-btn-custom"
+          }
+        ],
+        "show": false,
+        "flyTo": true
+      }
+    ]
+  }
+}

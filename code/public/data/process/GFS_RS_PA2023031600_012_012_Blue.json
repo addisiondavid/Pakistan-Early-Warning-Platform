@@ -1,0 +1,1 @@
+{"012": {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"value": "Blue", "style": {"color": "Blue"}}, "geometry": {"coordinates": [[[76.0, 33.51218], [76.03216, 33.5], [76.0, 33.47068], [75.97733, 33.5], [76.0, 33.51218], [76.0, 33.51218]]], "type": "Polygon"}}]}}
