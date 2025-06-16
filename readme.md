@@ -59,11 +59,6 @@ Key metrics displayed:
 
 ---
 
-## 🌐 Live Demo / Access  
-_To be linked when available._  
-
----
-
 ## 📌 Technologies  
 - Satellite data processing (custom + third-party services)  
 - GIS map engine  
